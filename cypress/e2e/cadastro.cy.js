@@ -2,7 +2,7 @@
 
 describe('US-012 Funcionalidade: Cadastro de membros', () => {
   beforeEach(() => {
-    cy.visit('http://192.168.1.4:8080/');
+    cy.visit('https://golden-movie-studio.vercel.app/');
   });
 
   it('CT-01 - Cadastro com campos obrigatórios preenchidos corretamente', () => {

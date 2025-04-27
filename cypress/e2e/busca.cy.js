@@ -2,7 +2,11 @@
 
 describe('US-12 : Funcionalidade: busca de filmes', () => {
     beforeEach(() => {
-        cy.visit('http://192.168.1.4:8080/');
+        cy.visit('https://golden-movie-studio.vercel.app/');
+    });
+
+    afterEach(() => {
+        Cypress.Screenshot()
     });
 
     it('Deve buscar filme com sucesso', () =>{
@@ -19,11 +23,11 @@ describe('US-12 : Funcionalidade: busca de filmes', () => {
         })
     });
 
-    it.only('Deve Buscar filmes copm sucessp da lista inteiro', () => {
-        cy.fixture('filmes').each((filmes) =>{
-            cy.get('#search-input').clear().type(filmes[0].titulo)
+    it.only('Deve Buscar filmes com sucesso da lista inteiro', () => {
+        cy.fixture('filmes').each((filmes) => {
+            cy.get('#search-input').clear().type(filmes.titulo)
             cy.get('#search-button').click({force: true})
-            cy.get('#results-section').should('contain' , filmes[0].titulo)
+            cy.get('#results-section').should('contain' , filmes.titulo)
         })
     });
 
