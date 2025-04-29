@@ -6,7 +6,7 @@ describe('US-12 : Funcionalidade: busca de filmes', () => {
     });
 
     afterEach(() => {
-        Cypress.Screenshot()
+        cy.screenshot()
     });
 
     it('Deve buscar filme com sucesso', () =>{
